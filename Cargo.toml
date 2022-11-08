@@ -1,0 +1,12 @@
+[package]
+name = "mirage_tank"
+authors = ["LovesAsuna"]
+version = "0.1.0"
+description = "黑白幻影坦克生成器"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+image = "0.24.4"
+clap = { version = "4.0.22", features = ["derive"] }
