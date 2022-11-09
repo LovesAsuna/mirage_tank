@@ -16,6 +16,21 @@ fn main() {
     let mut first = image::imageops::grayscale(&image::open(command.first).unwrap());
     let mut seconnd = image::imageops::grayscale(&image::open(command.second).unwrap());
 
+    if first.width() != seconnd.width() || first.height() != seconnd.height() {
+        println!("The size of given two images does not match");
+        println!(
+            "  First: width - {} height - {}",
+            first.width(),
+            first.height()
+        );
+        println!(
+            "  Second: width - {} height - {}",
+            seconnd.width(),
+            seconnd.height()
+        );
+        return;
+    }
+
     // first区间映射到[128, 255]
     for pixel in first.pixels_mut() {
         let mut c = pixel.0[0] as i32;
